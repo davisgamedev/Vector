@@ -288,10 +288,10 @@ public class Vector {
     public float dir(){
         return (float)Math.atan2(y, x);
     }
-
+    
     public static float getAngle(Vector a, Vector b){
         return b.dir() - a.dir();
-    }    
+    }   
     
     public static Vector lerp(Vector a, Vector b, float c){
         return add( mult(a, c), mult(b, 1.0f - c));
@@ -301,5 +301,16 @@ public class Vector {
         ix = (int)x;
         iy = (int)y;
         iz = (int)z;
+    }
+    
+    public void floatify(){
+        x = (float)ix;
+        y = (float)iy;
+        z = (float)iz;
+    }    
+    
+    @Override
+    public String toString(){
+        return "Vector( " + x  + ", " + y + ", " + z + " )";
     }
 }
